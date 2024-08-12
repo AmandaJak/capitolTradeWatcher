@@ -76,6 +76,9 @@ class DataFrameCleaner:
 
 
 class CapitolTraderScraper:
+    """
+    Scrapes https://www.capitoltrades.com/trades for trading data for all pages.
+    """
     def __init__(self):
         self.url = "https://www.capitoltrades.com/trades"
 
@@ -149,7 +152,7 @@ if __name__ == '__main__':
     # converts df_raw to pandas instead of keeping df in polars to rush completion of code
     # df_raw.write_csv(path, separator=';')
     df_pd = df_raw.to_pandas()
-    df_pd.to_csv(path, index=False, sep=';')
+    df_pd.to_csv(path, index=False, sep=';')  # use this to save the data to your computer. It's a big file
 
     # df_clean = cleaner.clean_dataframe(df_raw)
 
